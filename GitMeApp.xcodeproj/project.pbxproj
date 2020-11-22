@@ -25,6 +25,8 @@
 		816D5F632569CD3A005EFD42 /* ListUsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F622569CD3A005EFD42 /* ListUsersCoordinator.swift */; };
 		816D5F692569CF86005EFD42 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F682569CF86005EFD42 /* GitHubAPI.swift */; };
 		816D5F872569F49B005EFD42 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F862569F49A005EFD42 /* ViewModel.swift */; };
+		816D5F8F256A9814005EFD42 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F8E256A9814005EFD42 /* URLSession+Extensions.swift */; };
+		816D5F94256A9B81005EFD42 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F93256A9B81005EFD42 /* API.swift */; };
 		B0C3485D35C184915973060E /* Pods_GitMeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2975B578F555F51B1E29BF /* Pods_GitMeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		816D5F622569CD3A005EFD42 /* ListUsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersCoordinator.swift; sourceTree = "<group>"; };
 		816D5F682569CF86005EFD42 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		816D5F862569F49A005EFD42 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		816D5F8E256A9814005EFD42 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		816D5F93256A9B81005EFD42 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9E1A5C0BF2FFC08A5C54561E /* Pods-GitMeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitMeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GitMeAppTests/Pods-GitMeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C19CCCE1039E54613E5EF5 /* Pods_GitMeApp_GitMeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitMeApp_GitMeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0533E666C635E8F3E14C27 /* Pods-GitMeApp-GitMeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitMeApp-GitMeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GitMeApp-GitMeAppUITests/Pods-GitMeApp-GitMeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				816D5F682569CF86005EFD42 /* GitHubAPI.swift */,
+				816D5F8E256A9814005EFD42 /* URLSession+Extensions.swift */,
+				816D5F93256A9B81005EFD42 /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -485,12 +491,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816D5F94256A9B81005EFD42 /* API.swift in Sources */,
 				816D5F562569CB4A005EFD42 /* Coordinator.swift in Sources */,
 				816D5EF82569C847005EFD42 /* AppDelegate.swift in Sources */,
 				816D5F4D2569CA99005EFD42 /* ListUserViewController.swift in Sources */,
 				816D5F372569C93C005EFD42 /* Repositorie.swift in Sources */,
 				816D5EFA2569C847005EFD42 /* SceneDelegate.swift in Sources */,
 				816D5F632569CD3A005EFD42 /* ListUsersCoordinator.swift in Sources */,
+				816D5F8F256A9814005EFD42 /* URLSession+Extensions.swift in Sources */,
 				816D5F462569C9E5005EFD42 /* ListUsersVIewModel.swift in Sources */,
 				816D5F5E2569CCDC005EFD42 /* AppCoordinator.swift in Sources */,
 				816D5F322569C928005EFD42 /* User.swift in Sources */,

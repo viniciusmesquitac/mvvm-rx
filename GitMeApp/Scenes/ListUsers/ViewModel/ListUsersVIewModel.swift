@@ -13,7 +13,7 @@ protocol ListUsersViewModelInput {
 }
 
 protocol ListUsersViewModelOutput {
-    
+    var userNameObservable: Observable<String> { get }
 }
 
 protocol ListUsersViewModelProtocol: ViewModel {
@@ -44,4 +44,8 @@ class ListUsersViewModel: ListUsersViewModelProtocol, ListUsersViewModelInput {
 }
 
 
-extension ListUsersViewModel: ListUsersViewModelOutput {}
+extension ListUsersViewModel: ListUsersViewModelOutput {
+    var userNameObservable: Observable<String> {
+        self.outputs.userNameObservable.asObservable()
+    }
+}

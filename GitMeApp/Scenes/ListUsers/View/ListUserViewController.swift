@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
     var viewModel: ListUsersViewModelProtocol!
+    
+    let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool { return true }
     
@@ -27,8 +30,22 @@ class ListUserViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Users"
+        
+        populateUsers()
+        
         mainView.setupView()
         self.view = mainView
+    }
+    
+    func populateUsers() {
+        guard let url = GitHubAPI.allUsers.url else { fatalError("Invalid URL") }
+        
+        let resource = Resource<[User]>(url: url)
+        
+        URLRequest.load(resource: resource)
+            .subscribe(onNext: {
+                print($0)
+            }).disposed(by: disposeBag)
     }
     
 }

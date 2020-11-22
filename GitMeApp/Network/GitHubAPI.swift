@@ -5,27 +5,30 @@
 //  Created by Vinicius Mesquita on 21/11/20.
 //
 
-import Alamofire
-import RxSwift
-import RxCocoa
+import Foundation
 
-struct Resource<T: Decodable> {
-    let url: URL
+protocol Router {
+    var hostname: String { get }
+    var url: URL? { get }
 }
 
-extension URLRequest {
+enum GitHubAPI: Router {
+
+    case allUsers
+    case infoUser(username: String)
     
-    static func load<T>(resource: Resource<T>) -> Observable<T?> {
-
-        return Observable.from([resource.url])
-            .flatMap { url -> Observable<Data> in
-                let request = URLRequest(url: url)
-                return URLSession.shared.rx.data(request: request)
-            }.map { data -> T? in
-                return try? JSONDecoder().decode(T.self, from: data)
-
-        }.asObservable()
-
+    var hostname: String {
+        get {
+            return "https://api.github.com"
+        }
+    }
+    
+    var url: URL? {
+        get {
+            switch self {
+            case .allUsers: return URL(string: "\(hostname)/users")
+            case .infoUser(let username): return URL(string: "\(hostname)/\(username)")
+            }
+        }
     }
 }
-
