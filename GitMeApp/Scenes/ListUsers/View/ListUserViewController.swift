@@ -7,17 +7,18 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
-    var viewModel: ListUsersViewModelProtocol!
+    var viewModel: ListUsersViewModel! // I changed from `ListUsersViewModelProtocol`
     
     let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool { return true }
     
-    init(viewModel: ListUsersViewModelProtocol) {
+    init(viewModel: ListUsersViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,22 +31,42 @@ class ListUserViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Users"
-        
-        populateUsers()
-        
         mainView.setupView()
+        mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        viewModel.populateUsers()
         self.view = mainView
+        setup()
     }
     
-    func populateUsers() {
-        guard let url = GitHubAPI.allUsers.url else { fatalError("Invalid URL") }
+}
+
+extension ListUserViewController {
+    
+    func setup() {
+        setupInputs()
+        setupOutputs()
+    }
+    
+    private func setupOutputs() {
+//       viewModel.outputs.userListDriver
+//            .drive(mainView.tableView.rx
+//                    .items(cellIdentifier: "Cell",
+//                           cellType: UITableViewCell.self)) { row, result, cell in
+//                cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
+//            }.disposed(by: disposeBag)
+    }
+    
+    private func setupInputs() {
         
-        let resource = Resource<[User]>(url: url)
-        
-        URLRequest.load(resource: resource)
-            .subscribe(onNext: {
-                print($0)
-            }).disposed(by: disposeBag)
+        // bind view model inputs
+        viewModel.inputs.userListRelay.asObservable()
+            .bind(to: mainView.tableView.rx
+                    .items(cellIdentifier: "Cell",
+                           cellType: UITableViewCell.self)) { row, element, cell in
+
+                cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
+
+            }.disposed(by: disposeBag)
     }
     
 }

@@ -21,7 +21,7 @@ struct User: Decodable {
     }
     
     init() {
-        userName = ""
+        userName = "teste"
         imageUrl = ""
         userUrl = ""
         reposUrl = ""

@@ -20,12 +20,11 @@ final class ListUsersCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = ListUsersViewModel(coordinator: self)
-        let vc = ListUserViewController(viewModel: viewModel)
+        let vc = ListUserViewController(viewModel: ListUsersViewModel(coordinator: self, data: []))
         navigationController?.pushViewController(vc, animated: false)
     }
     
     func route(to Path: ListUserPath) {
-        // Switch case here ;-;
+        // Switch case here
     }
 }
