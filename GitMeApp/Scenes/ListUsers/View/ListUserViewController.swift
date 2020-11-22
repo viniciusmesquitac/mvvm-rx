@@ -10,7 +10,18 @@ import UIKit
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
+    var viewModel: ListUsersViewModelProtocol!
+    
     override var prefersStatusBarHidden: Bool { return true }
+    
+    init(viewModel: ListUsersViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,4 +30,5 @@ class ListUserViewController: UIViewController {
         mainView.setupView()
         self.view = mainView
     }
+    
 }

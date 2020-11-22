@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,12 +18,13 @@
 		816D5F322569C928005EFD42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F312569C928005EFD42 /* User.swift */; };
 		816D5F372569C93C005EFD42 /* Repositorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F362569C93C005EFD42 /* Repositorie.swift */; };
 		816D5F3D2569C9D0005EFD42 /* ListUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F3C2569C9D0005EFD42 /* ListUserView.swift */; };
-		816D5F462569C9E5005EFD42 /* ListUserVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F452569C9E5005EFD42 /* ListUserVIewModel.swift */; };
+		816D5F462569C9E5005EFD42 /* ListUsersVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F452569C9E5005EFD42 /* ListUsersVIewModel.swift */; };
 		816D5F4D2569CA99005EFD42 /* ListUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F4C2569CA99005EFD42 /* ListUserViewController.swift */; };
 		816D5F562569CB4A005EFD42 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F552569CB4A005EFD42 /* Coordinator.swift */; };
 		816D5F5E2569CCDC005EFD42 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F5D2569CCDC005EFD42 /* AppCoordinator.swift */; };
 		816D5F632569CD3A005EFD42 /* ListUsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F622569CD3A005EFD42 /* ListUsersCoordinator.swift */; };
 		816D5F692569CF86005EFD42 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F682569CF86005EFD42 /* GitHubAPI.swift */; };
+		816D5F872569F49B005EFD42 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5F862569F49A005EFD42 /* ViewModel.swift */; };
 		B0C3485D35C184915973060E /* Pods_GitMeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2975B578F555F51B1E29BF /* Pods_GitMeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +66,13 @@
 		816D5F312569C928005EFD42 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		816D5F362569C93C005EFD42 /* Repositorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorie.swift; sourceTree = "<group>"; };
 		816D5F3C2569C9D0005EFD42 /* ListUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserView.swift; sourceTree = "<group>"; };
-		816D5F452569C9E5005EFD42 /* ListUserVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserVIewModel.swift; sourceTree = "<group>"; };
+		816D5F452569C9E5005EFD42 /* ListUsersVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersVIewModel.swift; sourceTree = "<group>"; };
 		816D5F4C2569CA99005EFD42 /* ListUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserViewController.swift; sourceTree = "<group>"; };
 		816D5F552569CB4A005EFD42 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		816D5F5D2569CCDC005EFD42 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		816D5F622569CD3A005EFD42 /* ListUsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersCoordinator.swift; sourceTree = "<group>"; };
 		816D5F682569CF86005EFD42 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		816D5F862569F49A005EFD42 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9E1A5C0BF2FFC08A5C54561E /* Pods-GitMeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitMeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GitMeAppTests/Pods-GitMeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C19CCCE1039E54613E5EF5 /* Pods_GitMeApp_GitMeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitMeApp_GitMeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0533E666C635E8F3E14C27 /* Pods-GitMeApp-GitMeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitMeApp-GitMeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GitMeApp-GitMeAppUITests/Pods-GitMeApp-GitMeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +183,8 @@
 		816D5F412569C9D5005EFD42 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				816D5F452569C9E5005EFD42 /* ListUserVIewModel.swift */,
+				816D5F452569C9E5005EFD42 /* ListUsersVIewModel.swift */,
+				816D5F862569F49A005EFD42 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -242,7 +245,6 @@
 				9E1A5C0BF2FFC08A5C54561E /* Pods-GitMeAppTests.debug.xcconfig */,
 				2FD2AD25BF1A7B2188F97381 /* Pods-GitMeAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -489,10 +491,11 @@
 				816D5F372569C93C005EFD42 /* Repositorie.swift in Sources */,
 				816D5EFA2569C847005EFD42 /* SceneDelegate.swift in Sources */,
 				816D5F632569CD3A005EFD42 /* ListUsersCoordinator.swift in Sources */,
-				816D5F462569C9E5005EFD42 /* ListUserVIewModel.swift in Sources */,
+				816D5F462569C9E5005EFD42 /* ListUsersVIewModel.swift in Sources */,
 				816D5F5E2569CCDC005EFD42 /* AppCoordinator.swift in Sources */,
 				816D5F322569C928005EFD42 /* User.swift in Sources */,
 				816D5F692569CF86005EFD42 /* GitHubAPI.swift in Sources */,
+				816D5F872569F49B005EFD42 /* ViewModel.swift in Sources */,
 				816D5F3D2569C9D0005EFD42 /* ListUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
