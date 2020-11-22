@@ -10,12 +10,13 @@ import UIKit
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
+    override var prefersStatusBarHidden: Bool { return true }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = mainView
         
+        self.navigationItem.title = "Users"
+        mainView.setupView()
+        self.view = mainView
     }
-    
-
 }

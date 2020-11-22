@@ -8,8 +8,8 @@ target 'GitMeApp' do
   # Pods for GitMeApp
     pod 'SnapKit', '~> 5.0.0'
     pod 'Alamofire', '~> 5.2'
-    pod 'RxSwift', '6.0.0-rc.1'
-    pod 'RxCocoa', '6.0.0-rc.1'
+    pod 'RxSwift', '5.1.0'
+    pod 'RxCocoa', '5.1.0'
 
 
   target 'GitMeAppTests' do
