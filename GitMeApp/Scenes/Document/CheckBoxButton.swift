@@ -31,8 +31,10 @@ class CheckBoxButton: UIButton {
         
         rx.tap.subscribe(onNext: { [weak self] _ in
             guard let this = self else { return }
-            this.isSelectedVariable.accept(!this.isSelectedVariable.value)
-            this.isChecked = this.isSelectedVariable.value
+            if !this.isChecked {
+                this.isSelectedVariable.accept(!this.isSelectedVariable.value)
+                this.isChecked = this.isSelectedVariable.value
+            }
             this.verifyCheckbox()
         }).disposed(by: disposeBag)
     }
