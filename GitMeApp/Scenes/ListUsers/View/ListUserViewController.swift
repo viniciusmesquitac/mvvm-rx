@@ -12,7 +12,7 @@ import RxCocoa
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
-    var viewModel: ListUsersViewModel! // I changed from `ListUsersViewModelProtocol`
+    var viewModel: ListUsersViewModel!
     
     let disposeBag = DisposeBag()
     
@@ -32,7 +32,7 @@ class ListUserViewController: UIViewController {
         
         self.navigationItem.title = "Users"
         mainView.setupView()
-        mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        mainView.tableView.register(ListUserViewCell.self, forCellReuseIdentifier: ListUserViewCell.identifier)
         viewModel.populateUsers()
         self.view = mainView
         setup()
@@ -48,25 +48,23 @@ extension ListUserViewController {
     }
     
     private func setupOutputs() {
-//       viewModel.outputs.userListDriver
-//            .drive(mainView.tableView.rx
-//                    .items(cellIdentifier: "Cell",
-//                           cellType: UITableViewCell.self)) { row, result, cell in
-//                cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
-//            }.disposed(by: disposeBag)
-    }
-    
-    private func setupInputs() {
         
-        // bind view model inputs
-        viewModel.inputs.userListRelay.asObservable()
+        viewModel.outputs.usersListOutput
             .bind(to: mainView.tableView.rx
-                    .items(cellIdentifier: "Cell",
-                           cellType: UITableViewCell.self)) { row, element, cell in
-
-                cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
+                    .items(cellIdentifier: ListUserViewCell.identifier,
+                           cellType:ListUserViewCell.self)) { row, element, cell in
+                cell.textLabel?.text = "\(self.viewModel.userAt(row).user.userName)"
 
             }.disposed(by: disposeBag)
     }
     
+    private func setupInputs() { }
+    
 }
+
+/* Resource:
+ 
+ https://benoitpasquier.com/advanced-concepts-uitableview-rxdatasource/
+ 
+ 
+ */

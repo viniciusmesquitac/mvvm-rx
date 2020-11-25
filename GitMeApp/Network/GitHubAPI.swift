@@ -26,7 +26,7 @@ enum GitHubAPI: Router {
     var url: URL? {
         get {
             switch self {
-            case .allUsers: return URL(string: "\(hostname)/users")
+            case .allUsers: return URL(string: "\(hostname)/users?since=3")
             case .infoUser(let username): return URL(string: "\(hostname)/\(username)")
             }
         }

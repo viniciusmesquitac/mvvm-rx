@@ -10,12 +10,14 @@ import RxCocoa
 
 protocol ListUsersViewModelInput {
     var nextPage: PublishSubject<Void> { get }
-    var userListRelay: BehaviorRelay<[User]> { get }
+    
+    // var searchBar: PublishSubject<Void> { get }
+     var userListRelay: BehaviorRelay<[User]> { get }
 }
 
 protocol ListUsersViewModelOutput {
     var usersListOutput: Observable<[User]> { get }
-    var userListDriver: Driver<[User]> { get }
+    var dataSource: Observable<[UserViewModel]> { get }
 }
 
 protocol ListUsersViewModelProtocol: ViewModel {
@@ -53,12 +55,13 @@ class ListUsersViewModel: ListUsersViewModelProtocol, ListUsersViewModelInput {
     func populateUsers() {
         let resource = Resource<[User]>(url: GitHubAPI.allUsers.url!)
         // Subscribing an event
-        outputs.usersListOutput.subscribe { value in
+        outputs.dataSource
+            .subscribe { value in
             // API Request.
             URLRequest.load(resource: resource)
                 .subscribe(onNext: { listUser in
                     // add on input a new value
-                    self.data = listUser!
+                    self.users = listUser!.compactMap(UserViewModel.init)
                     self.inputs.userListRelay.accept(listUser!)
                 })
         }.disposed(by: disposeBag)
@@ -68,20 +71,29 @@ class ListUsersViewModel: ListUsersViewModelProtocol, ListUsersViewModelInput {
 
 extension ListUsersViewModel: ListUsersViewModelOutput {
     
-    var usersListOutput: Observable<[User]> {
-        Observable.of(self.data)
+    var dataSource: Observable<[UserViewModel]> {
+        return Observable.of(self.users)
     }
     
-    var userListDriver: Driver<[User]> {
-        self.inputs.userListRelay.accept(self.data)
-        return Driver.just(self.data)
+
+    var usersListOutput: Observable<[User]> {
+        return self.inputs.userListRelay.asObservable()
     }
+
 }
 
 extension ListUsersViewModel {
     
-    func userAt(_ index: Int) -> User {
-        return self.data[index]
+    func userAt(_ index: Int) -> UserViewModel {
+        return users[index]
     }
     
 }
+
+
+
+/* Resource Code
+ 
+ https://medium.com/flawless-app-stories/simplifying-rxswift-code-78071d5b780
+ 
+ */

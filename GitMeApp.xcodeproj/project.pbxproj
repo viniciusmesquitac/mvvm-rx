@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		065DC8EF6BE76B2293F30361 /* Pods_GitMeApp_GitMeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C19CCCE1039E54613E5EF5 /* Pods_GitMeApp_GitMeAppUITests.framework */; };
 		31AABB0E32ED193169812315 /* Pods_GitMeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF78C217E424CF203D93E2 /* Pods_GitMeAppTests.framework */; };
+		812F73F7256DA40200B38AEB /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F73F6256DA40200B38AEB /* CheckBoxButton.swift */; };
+		812F73FD256DA5B800B38AEB /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F73FC256DA5B800B38AEB /* R.swift */; };
+		812F7406256DA6B600B38AEB /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F7405256DA6B600B38AEB /* DocumentViewController.swift */; };
+		812F740E256DA6F100B38AEB /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F740D256DA6F100B38AEB /* DocumentView.swift */; };
+		812F7414256DA79C00B38AEB /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F7413256DA79C00B38AEB /* DocumentViewModel.swift */; };
+		812F741A256DA85C00B38AEB /* DocumentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812F7419256DA85C00B38AEB /* DocumentCoordinator.swift */; };
 		816D5EF82569C847005EFD42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5EF72569C847005EFD42 /* AppDelegate.swift */; };
 		816D5EFA2569C847005EFD42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D5EF92569C847005EFD42 /* SceneDelegate.swift */; };
 		816D5F012569C849005EFD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816D5F002569C849005EFD42 /* Assets.xcassets */; };
@@ -55,6 +61,12 @@
 		56EF78C217E424CF203D93E2 /* Pods_GitMeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitMeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2975B578F555F51B1E29BF /* Pods_GitMeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitMeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7954E3E8A180125EEBB62BFF /* Pods-GitMeApp-GitMeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitMeApp-GitMeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitMeApp-GitMeAppUITests/Pods-GitMeApp-GitMeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		812F73F6256DA40200B38AEB /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		812F73FC256DA5B800B38AEB /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		812F7405256DA6B600B38AEB /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		812F740D256DA6F100B38AEB /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		812F7413256DA79C00B38AEB /* DocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
+		812F7419256DA85C00B38AEB /* DocumentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoordinator.swift; sourceTree = "<group>"; };
 		816D5EF42569C847005EFD42 /* GitMeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitMeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		816D5EF72569C847005EFD42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		816D5EF92569C847005EFD42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		812F73FB256DA5A600B38AEB /* R */ = {
+			isa = PBXGroup;
+			children = (
+				812F73FC256DA5B800B38AEB /* R.swift */,
+			);
+			path = R;
+			sourceTree = "<group>";
+		};
+		812F7404256DA69800B38AEB /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				812F7413256DA79C00B38AEB /* DocumentViewModel.swift */,
+				812F73F6256DA40200B38AEB /* CheckBoxButton.swift */,
+				812F7405256DA6B600B38AEB /* DocumentViewController.swift */,
+				812F740D256DA6F100B38AEB /* DocumentView.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
 		816D5EEB2569C847005EFD42 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +233,9 @@
 		816D5F4A2569CA48005EFD42 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				812F73FB256DA5A600B38AEB /* R */,
 				816D5F542569CB15005EFD42 /* Coordinators */,
+				812F7404256DA69800B38AEB /* Document */,
 				816D5F4B2569CA50005EFD42 /* ListUsers */,
 			);
 			path = Scenes;
@@ -223,6 +256,7 @@
 				816D5F552569CB4A005EFD42 /* Coordinator.swift */,
 				816D5F5D2569CCDC005EFD42 /* AppCoordinator.swift */,
 				816D5F622569CD3A005EFD42 /* ListUsersCoordinator.swift */,
+				812F7419256DA85C00B38AEB /* DocumentCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -502,17 +536,23 @@
 				816D5EF82569C847005EFD42 /* AppDelegate.swift in Sources */,
 				816D5F4D2569CA99005EFD42 /* ListUserViewController.swift in Sources */,
 				816D5F372569C93C005EFD42 /* Repositorie.swift in Sources */,
+				812F73F7256DA40200B38AEB /* CheckBoxButton.swift in Sources */,
 				816D5EFA2569C847005EFD42 /* SceneDelegate.swift in Sources */,
 				816D5F632569CD3A005EFD42 /* ListUsersCoordinator.swift in Sources */,
+				812F7414256DA79C00B38AEB /* DocumentViewModel.swift in Sources */,
+				812F741A256DA85C00B38AEB /* DocumentCoordinator.swift in Sources */,
 				816D5FA9256AC0E0005EFD42 /* ListUserViewCell.swift in Sources */,
 				816D5F8F256A9814005EFD42 /* URLSession+Extensions.swift in Sources */,
 				816D5F462569C9E5005EFD42 /* ListUsersVIewModel.swift in Sources */,
 				816D5F5E2569CCDC005EFD42 /* AppCoordinator.swift in Sources */,
+				812F73FD256DA5B800B38AEB /* R.swift in Sources */,
 				816D5F322569C928005EFD42 /* User.swift in Sources */,
 				816D5F692569CF86005EFD42 /* GitHubAPI.swift in Sources */,
+				812F7406256DA6B600B38AEB /* DocumentViewController.swift in Sources */,
 				816D5F872569F49B005EFD42 /* ViewModel.swift in Sources */,
 				816D5FA4256AA862005EFD42 /* UserViewModel.swift in Sources */,
 				816D5F3D2569C9D0005EFD42 /* ListUserView.swift in Sources */,
+				812F740E256DA6F100B38AEB /* DocumentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

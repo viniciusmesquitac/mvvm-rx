@@ -24,7 +24,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func coordinateToListUsers() {
-        let listUsers = ListUsersCoordinator(navigationController: navigationController)
+        let listUsers = DocumentCoordinator(navigationController: navigationController)
         coordinate(to: listUsers)
     }
     
