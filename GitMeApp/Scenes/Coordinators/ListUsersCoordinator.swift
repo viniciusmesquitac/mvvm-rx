@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum ListUserPath {
+    case nextPage
+    case backPage
+}
+
 final class ListUsersCoordinator: Coordinator {
     var navigationController: UINavigationController!
     
@@ -15,7 +20,11 @@ final class ListUsersCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ListUserViewController()
+        let vc = ListUserViewController(viewModel: ListUsersViewModel(coordinator: self, data: []))
         navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func route(to Path: ListUserPath) {
+        // Switch case here
     }
 }

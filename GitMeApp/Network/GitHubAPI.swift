@@ -6,3 +6,29 @@
 //
 
 import Foundation
+
+protocol Router {
+    var hostname: String { get }
+    var url: URL? { get }
+}
+
+enum GitHubAPI: Router {
+
+    case allUsers
+    case infoUser(username: String)
+    
+    var hostname: String {
+        get {
+            return "https://api.github.com"
+        }
+    }
+    
+    var url: URL? {
+        get {
+            switch self {
+            case .allUsers: return URL(string: "\(hostname)/users")
+            case .infoUser(let username): return URL(string: "\(hostname)/\(username)")
+            }
+        }
+    }
+}
