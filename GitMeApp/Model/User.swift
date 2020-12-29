@@ -21,10 +21,23 @@ struct User: Decodable {
     }
     
     init() {
-        userName = "teste"
+        userName = "User"
         imageUrl = ""
         userUrl = ""
         reposUrl = ""
+    }
+}
+
+extension User {
+    
+    func createMockUsers(in range: Range<Int> = 0..<16) -> [User] {
+        var users = [User]()
+        for index in range {
+            var user = User()
+            user.userName = "User \(index)"
+            users.append(user)
+        }
+        return users
     }
 }
 

@@ -13,7 +13,6 @@ class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
     var viewModel: ListUsersViewModel!
-    
     let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool { return true }
@@ -32,7 +31,7 @@ class ListUserViewController: UIViewController {
         
         self.navigationItem.title = "Users"
         mainView.setupView()
-        mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        mainView.tableView.register(ListUserViewCell.self, forCellReuseIdentifier: ListUserViewCell.identifier)
         viewModel.populateUsers()
         self.view = mainView
         setup()
@@ -54,9 +53,8 @@ extension ListUserViewController {
         // bind view model inputs
         viewModel.inputs.userListRelay.asObservable()
             .bind(to: mainView.tableView.rx
-                    .items(cellIdentifier: "Cell",
-                           cellType: UITableViewCell.self)) { row, element, cell in
-
+                    .items(cellIdentifier: ListUserViewCell.identifier,
+                           cellType: ListUserViewCell.self)) { row, element, cell in
                 cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
 
             }.disposed(by: disposeBag)
