@@ -9,7 +9,4 @@ import UIKit
 
 class ListUserViewCell: UITableViewCell {
     static let identifier = "CellIdentifier"
-    
-    
-    
 }

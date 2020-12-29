@@ -12,7 +12,7 @@ import RxCocoa
 class ListUserViewController: UIViewController {
 
     let mainView = ListUserView()
-    var viewModel: ListUsersViewModel! // I changed from `ListUsersViewModelProtocol`
+    var viewModel: ListUsersViewModel!
     
     let disposeBag = DisposeBag()
     
@@ -47,14 +47,7 @@ extension ListUserViewController {
         setupOutputs()
     }
     
-    private func setupOutputs() {
-//       viewModel.outputs.userListDriver
-//            .drive(mainView.tableView.rx
-//                    .items(cellIdentifier: "Cell",
-//                           cellType: UITableViewCell.self)) { row, result, cell in
-//                cell.textLabel?.text = "\(self.viewModel.userAt(row).userName)"
-//            }.disposed(by: disposeBag)
-    }
+    private func setupOutputs() { }
     
     private func setupInputs() {
         
